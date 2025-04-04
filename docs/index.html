@@ -40,7 +40,9 @@
         }
     }
 
-    img {}
+    img {
+       
+    }
 
     section {
         padding: 2% 4%;
@@ -49,7 +51,7 @@
 
     footer {
         position: relative;
-        bottom: 0;
+        bottom: 0; 
         width: 98%;
         display: flex;
         justify-content: space-around;
@@ -75,10 +77,11 @@
         NUAGES<sub>duo</sub>
 
     </header>
-    <img src="img/Portada1.png">
+    <img id="portada" src="img/Portada1.png">
 
     <section>
-        <h1>Antonio&nbsp;Asensio&nbsp;&nbsp; <sub>&</sub>&nbsp;&nbsp;Pablo&nbsp;Lusarreta<br><sub>Dúo de Guitarras</sub></h1>
+        <h1>Antonio&nbsp;Asensio&nbsp;&nbsp; <sub>&</sub>&nbsp;&nbsp;Pablo&nbsp;Lusarreta<br><sub>Dúo de Guitarras</sub>
+        </h1>
         <p>
             Fundado en 2023, este dúo de guitarristas ofrece un repertorio variado y elegante, con un sonido refinado y
             atmosférico.
@@ -97,14 +100,27 @@
     </section>
     <footer>
 
-        <button  id="video">Video promocinal</button>
+        <button id="video">Video promocinal</button>
 
     </footer>
-<script>
-    document.getElementById('video').addEventListener("click",()=>{
-        location.assign("https://youtu.be/OWthePjAnOU")
-    })
-</script>
+    <script>
+        document.getElementById('video').addEventListener("click", () => {
+            location.assign("https://youtu.be/OWthePjAnOU")
+        })
+        const imagenes = ["img/Portada1.png", "img/Portada2.png", "img/Portada3.png"]
+        const imgPortada = document.getElementById('portada')
+        let foto = 1  
+        const presentacion = () => {
+            
+            setTimeout(() => {
+                imgPortada.src = `${imagenes[foto]}`
+                foto = (foto == (imagenes.length - 1)) ? 0 : foto + 1
+               
+            }, 2000)
+        }
+
+        setInterval(presentacion, 8000)
+    </script> 
 </body>
 
 </html>
