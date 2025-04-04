@@ -40,9 +40,7 @@
         }
     }
 
-    img {
-       
-    }
+    img {}
 
     section {
         padding: 2% 4%;
@@ -51,7 +49,7 @@
 
     footer {
         position: relative;
-        bottom: 0; 
+        bottom: 0;
         width: 98%;
         display: flex;
         justify-content: space-around;
@@ -109,18 +107,18 @@
         })
         const imagenes = ["img/Portada1.png", "img/Portada2.png", "img/Portada3.png"]
         const imgPortada = document.getElementById('portada')
-        let foto = 1  
+        let foto = 1
         const presentacion = () => {
-            
+
             setTimeout(() => {
                 imgPortada.src = `${imagenes[foto]}`
                 foto = (foto == (imagenes.length - 1)) ? 0 : foto + 1
-               
+
             }, 2000)
         }
 
         setInterval(presentacion, 8000)
-    </script> 
+    </script>
 </body>
 
 </html>
