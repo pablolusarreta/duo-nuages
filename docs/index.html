@@ -40,7 +40,10 @@
         }
     }
 
-    img {}
+    img {
+        opacity: 0;
+        transition: opacity 1s;
+    }
 
     section {
         padding: 2% 4%;
@@ -105,18 +108,20 @@
         document.getElementById('video').addEventListener("click", () => {
             location.assign("https://youtu.be/OWthePjAnOU")
         })
+        //
         const imagenes = ["img/Portada1.png", "img/Portada2.png", "img/Portada3.png"]
         const imgPortada = document.getElementById('portada')
+        imgPortada.addEventListener('load', () => {
+            imgPortada.style.opacity = "1"
+        })
         let foto = 1
         const presentacion = () => {
-
+            imgPortada.style.opacity = "0"
             setTimeout(() => {
                 imgPortada.src = `${imagenes[foto]}`
                 foto = (foto == (imagenes.length - 1)) ? 0 : foto + 1
-
-            }, 2000)
+            }, 1000)
         }
-
         setInterval(presentacion, 8000)
     </script>
 </body>
